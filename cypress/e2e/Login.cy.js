@@ -33,6 +33,8 @@ describe('test login', () => {
   })
 
   // -------------- Invalid Login -------------- //
+  const INVALID_USER = 'test'
+  const INVALID_PASS = 'password'
 
   describe('Invalid Registered', () => {
 
@@ -42,7 +44,7 @@ describe('test login', () => {
         .should('contain.text', 'Login Page')
 
       cy.login(
-        'test.com',
+        INVALID_USER,
         Cypress.env('ADMIN_PASS'))
 
       cy.get('#flash')
@@ -60,7 +62,7 @@ describe('test login', () => {
 
       cy.login(
         Cypress.env('ADMIN_USER'),
-        '1234'
+        INVALID_PASS
       )
 
       cy.get('#flash')
