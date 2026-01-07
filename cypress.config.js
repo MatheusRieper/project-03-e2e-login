@@ -11,4 +11,4 @@ module.exports = defineConfig({
     ADMIN_USER: 'tomsmith',
     ADMIN_PASS: 'SuperSecretPassword!'
   }
-});
+}); 

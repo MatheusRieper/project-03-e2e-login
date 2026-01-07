@@ -24,28 +24,32 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('Start', () => {
+Cypress.Commands.add('openPage', () => {
 
-    // Redimencionando Resolução de tela
     cy.viewport(1440, 900)
-    // Open Site
     cy.visit('https://the-internet.herokuapp.com/login')
 })
 
 
-Cypress.Commands.add('login', (email, senha) => {
+Cypress.Commands.add('login', (email, password) => {
 
-    // Email
-    cy.get('#username')
-        .should('be.visible')
-        .type(email)
+    if (email) {
+        cy.get('#username').clear().type(email)
+    }
+    else {
+        cy.get('#username').clear()
+    }
 
-    // Password
-    cy.get('#password')
-        .should('be.visible')
-        .type(senha)
+    if (password) {
+        cy.get('#password').clear().type(password)
+    }
+    else {
+        cy.get('#password') .clear()
+    }
 
-    // Button login
+
     cy.get('button[type="submit"]')
+        .should('be.visible')
+        .and('be.enabled')
         .click()
 })

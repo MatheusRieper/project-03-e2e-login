@@ -1,0 +1,28 @@
+{
+    "invalid": [
+        {
+            "scenario": "email invalido",
+            "email": "email@gmail.com",
+            "password": "SuperSecretPassword",
+            "message": "Your username is invalid!"
+        },
+        {
+            "scenario": "password invalida",
+            "email": "tomsmith",
+            "password": "pass1234",
+            "message": "Your password is invalid!"
+        },
+        {
+            "scenario": "Campo email vazio",
+            "email": "",
+            "password": "SuperSecretPassword",
+            "message": "Your username is invalid!"
+        },
+        {
+            "scenario": "Campo password vazio",
+            "email": "tomsmith",
+            "password": "",
+            "message":"Your password is invalid!"
+        }
+    ]
+}
